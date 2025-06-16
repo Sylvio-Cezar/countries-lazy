@@ -44,13 +44,16 @@ class Country {
 
     return Country(
       name: json['name']?['common'] ?? '',
-      capital: json['capital'] != null ? List<String>.from(json['capital']) : [],
+      capital:
+          json['capital'] != null ? List<String>.from(json['capital']) : [],
       region: json['region'] ?? '',
       subregion: json['subregion'] ?? '',
       population: json['population'] ?? 0,
       area: (json['area'] != null) ? (json['area'] as num).toDouble() : 0.0,
-      timezones: json['timezones'] != null ? List<String>.from(json['timezones']) : [],
-      borders: json['borders'] != null ? List<String>.from(json['borders']) : [],
+      timezones:
+          json['timezones'] != null ? List<String>.from(json['timezones']) : [],
+      borders:
+          json['borders'] != null ? List<String>.from(json['borders']) : [],
       languages: parseLanguages(json['languages']),
       currencies: parseCurrencies(json['currencies']),
       flagUrl: json['flags']?['png'] ?? '',
